@@ -135,7 +135,7 @@ def taskWrite(a,taskname):
     data={
          "title": taskname,
          }
-    print("    创建任务")
+    print("    创建任务"+str(listjson))
     taskjson=json.loads(apiReq('post',a,url,json.dumps(data)))
     url=r'https://graph.microsoft.com/v1.0/me/todo/lists/'+listjson['id']+r'/tasks/'+taskjson['id']
     print("    删除任务")
