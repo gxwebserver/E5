@@ -42,6 +42,7 @@ def getmstoken(ms_token,appnum):
         'redirect_uri':'http://localhost:53682/'
         }
     html = req.post('https://login.microsoftonline.com/common/oauth2/v2.0/token',data=data,headers=headers)
+	print(jsontxt)
     jsontxt = json.loads(html.text)
     if 'refresh_token' in jsontxt:
         print(r'账号/应用 '+str(appnum)+' 的微软密钥获取成功')
