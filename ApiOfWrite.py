@@ -113,7 +113,7 @@ def excelWrite(a,filesname,sheet):
          }
     print('    添加表格')
     jsontxt=json.loads(apiReq('post',a,url,json.dumps(data)))
-    print('    添加行'+jsontxt)
+    print('    添加行'+str(jsontxt))
     url=r'https://graph.microsoft.com/v1.0/me/drive/root:/AutoApi/App'+str(a)+r'/'+filesname+r':/workbook/tables/'+jsontxt['id']+r'/rows/add'
     rowsvalues=[[0]*4]*2
     for v1 in range(0,2):
